@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}
+Blogs | Bhuwan Bahadur Neupane
+{% endblock title %}
+
+{% block content %}
+
+<div class="container mt-4 mb-4">
+  <p class="h3">Blogs</p>
+  {% if blog %}
+  {% for x in blog %}
+	<div class="row mt-1 mb-4">
+		<div class="col">
+		  <div class="card">  
+        <div class="card-header bg-warning text-white">
+          Featured
+        </div>
+        <div class="card-body bg-primary text-white">
+          <h5 class="card-title">{{ x.title }}</h5>
+          <div class=" container bg-light mb-2"></div>
+          <p class="card-text">{{x.summary}}</p>
+          <a href="#" class="btn bg-warning text-white">View Blog</a>
+        </div>
+      </div>		
+	  </div>
+  </div>
+
+  {% endfor %}
+  {% endif %}
+</div>
+
+	
+{% endblock content %}

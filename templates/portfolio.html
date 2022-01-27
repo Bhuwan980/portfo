@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}
+Projects | Bhuwan Bahadur Neupane
+{% endblock title %}
+
+{% block content %}
+
+
+<div class="container mt-4 mb-4">
+	<p class="h3">My Projects</p>
+
+	<div class="row">
+    {% if portfolios %}
+    {% for x in portfolios %}
+
+	  <div class="col mb-6">
+		  <div class="card" style="width: 24rem;">
+        <img class="card-img-top" src="{{x.image.url}}" alt="Card image cap">
+      <div class="card-body bg-primary">
+        <h5 class="card-title text-white">{{x.title}}</h5>
+        <p class="card-text text-white">{{x.summary}}</p>
+      </div>
+  
+      <ul class="list-group">
+        <li class="list-group-item  bg-warning text-center text-white"><a class='nav-link text-white' href="{{x.url}}" target='_blank'>View Project</a></li>
+      </ul>
+    </div>
+  </div>
+  {% endfor %}
+
+{% endif %}
+</div>
+</div>
+{% endblock content %}
